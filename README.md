@@ -1,2 +1,2 @@
 # DevOoops
-A MacOS menu bar application to see the builds on you Azure DevOps pipeline. 
+A MacOS menu bar application to see the builds of your Azure DevOps Build pipeline. 
