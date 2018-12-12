@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14460.31"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -647,18 +648,177 @@
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Window Controller-->
+        <scene sceneID="FxZ-JR-48D">
             <objects>
-                <viewController storyboardIdentifier="DevOoopsMenuBar" id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                <windowController storyboardIdentifier="AboutWindow" id="y2y-fb-9x3" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="KZT-1X-3nI">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="245" y="548" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <connections>
+                            <outlet property="delegate" destination="y2y-fb-9x3" id="Key-FF-UzH"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="k6U-1C-3Ff" kind="relationship" relationship="window.shadowedContentViewController" id="lsm-7x-I1C"/>
+                    </connections>
+                </windowController>
+                <customObject id="oKI-EJ-3lv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="108" y="779"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="wKa-vi-eZq">
+            <objects>
+                <viewController id="k6U-1C-3Ff" customClass="AboutViewController" sceneMemberID="viewController">
+                    <view key="view" id="Qw8-yS-awT">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVr-I6-4lQ">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="AboutBackground" id="fsq-D2-UiR"/>
+                            </imageView>
+                            <box boxType="custom" borderType="none" borderWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="Ycb-n8-WH8">
+                                <rect key="frame" x="12" y="206" width="80" height="4"/>
+                                <view key="contentView" id="3ff-bp-nGk">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="4"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="fillColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </box>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZSh-oi-fu3">
+                                <rect key="frame" x="10" y="172" width="78" height="34"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="About" id="OcI-ML-BKV">
+                                    <font key="font" metaFont="system" size="28"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.93420911815068497" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" preferredMaxLayoutWidth="464" translatesAutoresizingMaskIntoConstraints="NO" id="WMQ-pu-vhs">
+                                <rect key="frame" x="10" y="98" width="460" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="456" id="WBc-9z-3uv"/>
+                                </constraints>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="2rN-vv-wCg">
+                                    <font key="font" metaFont="system" size="14"/>
+                                    <string key="title">The purpose of this project is to show how to build a macOS menu bar app with Xamarin and C#. The project also tries to experiment and explore what can be done using Xamarin and C#.</string>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.70234910107671222" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="DWr-lQ-vXJ" customClass="HyperlinkTextField">
+                                <rect key="frame" x="10" y="12" width="154" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Check Project on GitHub" id="K4E-zW-QNf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xrP-rB-Aio" customClass="HyperlinkTextField">
+                                <rect key="frame" x="184" y="12" width="123" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Say hello on Twitter" id="OjV-vj-hA4">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="xrP-rB-Aio" firstAttribute="leading" secondItem="DWr-lQ-vXJ" secondAttribute="trailing" constant="24" id="3Xm-bT-T0j"/>
+                            <constraint firstAttribute="trailing" secondItem="Ycb-n8-WH8" secondAttribute="trailing" constant="388" id="3tb-XZ-nbR"/>
+                            <constraint firstItem="Ycb-n8-WH8" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" constant="12" id="6yc-GM-iR5"/>
+                            <constraint firstItem="Ycb-n8-WH8" firstAttribute="leading" secondItem="WMQ-pu-vhs" secondAttribute="leading" id="IqB-ng-WMN"/>
+                            <constraint firstItem="gVr-I6-4lQ" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" id="TJH-Hg-thH"/>
+                            <constraint firstAttribute="trailing" secondItem="gVr-I6-4lQ" secondAttribute="trailing" id="ZLZ-2C-Rdh"/>
+                            <constraint firstItem="DWr-lQ-vXJ" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" constant="12" id="bKM-84-aRS"/>
+                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="leading" secondItem="Qw8-yS-awT" secondAttribute="leading" constant="12" id="fEV-mh-gAc"/>
+                            <constraint firstItem="Ycb-n8-WH8" firstAttribute="top" secondItem="Qw8-yS-awT" secondAttribute="top" constant="60" id="fLa-0L-Cxb"/>
+                            <constraint firstItem="WMQ-pu-vhs" firstAttribute="top" secondItem="ZSh-oi-fu3" secondAttribute="bottom" constant="20" id="jPS-jo-kjC"/>
+                            <constraint firstAttribute="bottom" secondItem="Ycb-n8-WH8" secondAttribute="bottom" constant="206" id="kfs-ya-Tdd"/>
+                            <constraint firstAttribute="bottom" secondItem="gVr-I6-4lQ" secondAttribute="bottom" id="muM-ai-Wce"/>
+                            <constraint firstAttribute="bottom" secondItem="DWr-lQ-vXJ" secondAttribute="bottom" constant="12" id="ny3-un-FdU"/>
+                            <constraint firstItem="gVr-I6-4lQ" firstAttribute="top" secondItem="Qw8-yS-awT" secondAttribute="top" id="sCv-U2-iYn"/>
+                            <constraint firstItem="ZSh-oi-fu3" firstAttribute="top" secondItem="3ff-bp-nGk" secondAttribute="bottom" id="uqO-w3-gEe"/>
+                            <constraint firstAttribute="bottom" secondItem="xrP-rB-Aio" secondAttribute="bottom" constant="12" id="z4A-q8-txp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="GitHubLink" destination="DWr-lQ-vXJ" id="PBr-RY-EGK"/>
+                        <outlet property="TwitterLink" destination="xrP-rB-Aio" id="ucf-m0-IIy"/>
+                    </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="m43-TE-8qM" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="956" y="128"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kAP-Au-Fpk">
+            <objects>
+                <viewController storyboardIdentifier="PopupController" id="r6k-Cr-70M" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" id="PDz-hz-7b3">
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v9V-dx-rg1">
+                                <rect key="frame" x="18" y="236" width="4" height="44"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="7VW-Im-aDC">
+                                    <font key="font" metaFont="system" size="36"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="80" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="uXR-S6-vp1">
+                                <rect key="frame" x="20" y="123" width="80" height="80"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageAlignment="topLeft" imageScaling="proportionallyDown" image="MakeEpicThings" id="HNg-pW-nu0"/>
+                            </imageView>
+                            <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xTe-6E-esw">
+                                <rect key="frame" x="20" y="217" width="160" height="5"/>
+                            </box>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-IQ-Yt0">
+                                <rect key="frame" x="330" y="12" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="cDb-HM-nuk"/>
+                                    <constraint firstAttribute="height" constant="20" id="hm6-tc-uMD"/>
+                                </constraints>
+                                <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="Settings" imagePosition="only" alignment="center" alternateImage="Settings_Alternate" imageScaling="proportionallyDown" inset="2" id="tJ0-5b-AqY">
+                                    <behavior key="behavior" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="SettingsButtonClick:" target="r6k-Cr-70M" id="DKR-ys-Ksy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="xTe-6E-esw" secondAttribute="trailing" constant="182" id="7Ls-UJ-KaH"/>
+                            <constraint firstItem="xTe-6E-esw" firstAttribute="top" secondItem="v9V-dx-rg1" secondAttribute="bottom" constant="16" id="BOv-gl-SXM"/>
+                            <constraint firstItem="uXR-S6-vp1" firstAttribute="top" secondItem="xTe-6E-esw" secondAttribute="bottom" constant="16" id="HBH-jK-2GK"/>
+                            <constraint firstAttribute="bottom" secondItem="PGI-IQ-Yt0" secondAttribute="bottom" constant="12" id="IDx-Lt-8xT"/>
+                            <constraint firstAttribute="trailing" secondItem="PGI-IQ-Yt0" secondAttribute="trailing" constant="12" id="Pqj-um-dTv"/>
+                            <constraint firstItem="v9V-dx-rg1" firstAttribute="leading" secondItem="PDz-hz-7b3" secondAttribute="leading" constant="20" id="Snm-am-wlt"/>
+                            <constraint firstItem="xTe-6E-esw" firstAttribute="leading" secondItem="v9V-dx-rg1" secondAttribute="leading" id="a2b-z7-EVK"/>
+                            <constraint firstItem="v9V-dx-rg1" firstAttribute="top" secondItem="PDz-hz-7b3" secondAttribute="top" constant="20" id="urO-kp-urO"/>
+                            <constraint firstItem="xTe-6E-esw" firstAttribute="leading" secondItem="uXR-S6-vp1" secondAttribute="leading" id="wO0-VY-eV5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="SettingsButton" destination="PGI-IQ-Yt0" id="JLt-rR-79F"/>
+                        <outlet property="titleText" destination="7VW-Im-aDC" id="EBT-HR-zF4"/>
+                    </connections>
+                </viewController>
+                <customObject id="n3b-vm-BzC" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="302"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AboutBackground" width="480" height="270"/>
+        <image name="MakeEpicThings" width="38.400001525878906" height="38.400001525878906"/>
+        <image name="Settings" width="24" height="24"/>
+        <image name="Settings_Alternate" width="24" height="24"/>
+    </resources>
 </document>
